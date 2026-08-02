@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.8.12009.203 stable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Application_业务应用层", "AppFrame.Application_业务应用层", "{7BDAC6C8-07C6-46B4-A2E1-87DA7C09B7AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Core_领域能力抽象", "AppFrame.Core_领域能力抽象", "{196B7E60-C831-43C9-9A63-AF991C443405}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Infrastructrue_接口实现层", "AppFrame.Infrastructrue_接口实现层", "{D5FF0278-D404-4A97-8C74-CD64C1D4FF26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Common_通用基础公共层", "AppFrame.Common_通用基础公共层", "{DB7651C3-109C-4127-B0BD-024F4908C0B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.AppClient_程序入口及公共资源字典", "AppFrame.AppClient_程序入口及公共资源字典", "{D1E2A633-9603-4CF3-A606-733355A3426F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.Application", "src\AppFrame.Application\AppFrame.Application.csproj", "{9D602443-E8D5-440E-A5FC-E12CF25A2F16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.Common", "src\AppFrame.Common\AppFrame.Common.csproj", "{AE835B66-1622-464A-A481-052534DB39D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.Infrastructrue", "src\AppFrame.Infrastructrue\AppFrame.Infrastructrue.csproj", "{C3C92C2E-0767-41B3-BC0E-68C2CEAAFEF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.Core", "src\AppFrame.Core\AppFrame.Core.csproj", "{E6460868-26DD-4FB0-A556-201EB2473FD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Test_单元测试", "AppFrame.Test_单元测试", "{EED4B083-5081-4D65-AB8C-BA9A8CDE1761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.ConsoleTest", "src\AppFrame.ConsoleTest\AppFrame.ConsoleTest.csproj", "{F650CD6D-CCA7-480E-B82B-9E17F9BE73C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.Entity", "src\AppFrame.Entity\AppFrame.Entity.csproj", "{A19B3E34-93EF-4520-A805-883CF01D35FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.WpfClient", "src\AppFrame.WpfClient\AppFrame.WpfClient.csproj", "{488EC4C4-8FCA-4CC0-987B-E7BA619657FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.AppFrameControls", "src\AppFrame.AppFrameControls\AppFrame.AppFrameControls.csproj", "{47FAC131-0F36-46D6-BB7A-F9EBD36F6A66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D602443-E8D5-440E-A5FC-E12CF25A2F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D602443-E8D5-440E-A5FC-E12CF25A2F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D602443-E8D5-440E-A5FC-E12CF25A2F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D602443-E8D5-440E-A5FC-E12CF25A2F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE835B66-1622-464A-A481-052534DB39D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE835B66-1622-464A-A481-052534DB39D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE835B66-1622-464A-A481-052534DB39D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE835B66-1622-464A-A481-052534DB39D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C92C2E-0767-41B3-BC0E-68C2CEAAFEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C92C2E-0767-41B3-BC0E-68C2CEAAFEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C92C2E-0767-41B3-BC0E-68C2CEAAFEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C92C2E-0767-41B3-BC0E-68C2CEAAFEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6460868-26DD-4FB0-A556-201EB2473FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6460868-26DD-4FB0-A556-201EB2473FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6460868-26DD-4FB0-A556-201EB2473FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6460868-26DD-4FB0-A556-201EB2473FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F650CD6D-CCA7-480E-B82B-9E17F9BE73C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F650CD6D-CCA7-480E-B82B-9E17F9BE73C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F650CD6D-CCA7-480E-B82B-9E17F9BE73C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F650CD6D-CCA7-480E-B82B-9E17F9BE73C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A19B3E34-93EF-4520-A805-883CF01D35FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A19B3E34-93EF-4520-A805-883CF01D35FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A19B3E34-93EF-4520-A805-883CF01D35FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A19B3E34-93EF-4520-A805-883CF01D35FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{488EC4C4-8FCA-4CC0-987B-E7BA619657FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{488EC4C4-8FCA-4CC0-987B-E7BA619657FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{488EC4C4-8FCA-4CC0-987B-E7BA619657FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{488EC4C4-8FCA-4CC0-987B-E7BA619657FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FAC131-0F36-46D6-BB7A-F9EBD36F6A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FAC131-0F36-46D6-BB7A-F9EBD36F6A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FAC131-0F36-46D6-BB7A-F9EBD36F6A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FAC131-0F36-46D6-BB7A-F9EBD36F6A66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D602443-E8D5-440E-A5FC-E12CF25A2F16} = {7BDAC6C8-07C6-46B4-A2E1-87DA7C09B7AA}
+		{AE835B66-1622-464A-A481-052534DB39D3} = {DB7651C3-109C-4127-B0BD-024F4908C0B7}
+		{C3C92C2E-0767-41B3-BC0E-68C2CEAAFEF5} = {D5FF0278-D404-4A97-8C74-CD64C1D4FF26}
+		{E6460868-26DD-4FB0-A556-201EB2473FD4} = {196B7E60-C831-43C9-9A63-AF991C443405}
+		{F650CD6D-CCA7-480E-B82B-9E17F9BE73C7} = {EED4B083-5081-4D65-AB8C-BA9A8CDE1761}
+		{A19B3E34-93EF-4520-A805-883CF01D35FF} = {196B7E60-C831-43C9-9A63-AF991C443405}
+		{488EC4C4-8FCA-4CC0-987B-E7BA619657FF} = {D1E2A633-9603-4CF3-A606-733355A3426F}
+		{47FAC131-0F36-46D6-BB7A-F9EBD36F6A66} = {D1E2A633-9603-4CF3-A606-733355A3426F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F01219FF-F477-4B3A-9318-5B253153A3A6}
+	EndGlobalSection
+EndGlobal

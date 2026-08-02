@@ -1,0 +1,175 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:appui="clr-namespace:AppFrame.AppFrameControls.AppControls">
+    
+    <ControlTemplate x:Key="ExpanderToggleButton" TargetType="{x:Type ToggleButton}">
+        <Grid Margin="{TemplateBinding Padding}" Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <ContentPresenter x:Name="ContentPresenter"
+                                              Grid.Column="0"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Content}" />
+            <Grid x:Name="IconGrid"
+                      Grid.Column="1"
+                      Margin="0"
+                      Width="16"
+                      Height="10"
+                      VerticalAlignment="Center"
+                      Background="Transparent"
+                      RenderTransformOrigin="0.5, 0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Path Stretch="Fill"
+                          Fill="White"
+                          x:Name="pathIcon"
+                          Data="M786.102272 365.897728c-9.998336-9.997312-26.206208-9.997312-36.20352 0L512 603.79648 274.102272 365.897728c-9.998336-9.997312-26.206208-9.997312-36.20352 0-9.997312 9.997312-9.997312 26.206208 0 36.20352l256 256C498.896896 663.100416 505.448448 665.6 512 665.6s13.103104-2.499584 18.102272-7.497728l256-256C796.09856 392.10496 796.09856 375.89504 786.102272 365.897728z"/>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="IconGrid"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)"
+                                            From="0"
+                                            To="180"
+                                            Duration="00:00:00.167" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="IconGrid"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)"
+                                            From="180"
+                                            To="0"
+                                            Duration="00:00:00.167" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <Style x:Key="AppFrameExpanderStyle" TargetType="appui:AppFrameExpander">
+        <Setter Property="Background" Value="#404040" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="IsExpanded" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Padding" Value="12" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="appui:AppFrameExpander">
+                    <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <!--  Top level controls always visible  -->
+                            <ToggleButton
+                                x:Name="ExpanderToggleButton"
+                                Margin="0"
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Center"
+                                Background="Transparent"
+                                Content="{TemplateBinding Header}"
+                                Foreground="{TemplateBinding Foreground}"
+                                IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                OverridesDefaultStyle="True"
+                                Template="{StaticResource ExpanderToggleButton}" />
+                            <!--  Collapsed content to expand  -->
+                            <Border x:Name="ContentPresenterBorder"
+                                        Grid.Row="1"
+                                        Background="Transparent"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        Opacity="0.0">
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                      Margin="{TemplateBinding Padding}"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                      Content="{TemplateBinding Content}"
+                                                      />
+                                <Border.LayoutTransform>
+                                    <ScaleTransform ScaleY="0" />
+                                </Border.LayoutTransform>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="true">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="ContentPresenterBorder"
+                                            Storyboard.TargetProperty="(Border.LayoutTransform).(ScaleTransform.ScaleY)"
+                                            From="0.0"
+                                            To="1.0"
+                                            Duration="00:00:00.167" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="ContentPresenterBorder"
+                                            Storyboard.TargetProperty="(Border.Opacity)"
+                                            From="0.0"
+                                            To="1.0"
+                                            Duration="00:00:00.167" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="ContentPresenterBorder"
+                                            Storyboard.TargetProperty="(Border.LayoutTransform).(ScaleTransform.ScaleY)"
+                                            From="1.0"
+                                            To="0"
+                                            Duration="00:00:00.167" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="ContentPresenterBorder"
+                                            Storyboard.TargetProperty="(Border.Opacity)"
+                                            From="1.0"
+                                            To="0.0"
+                                            Duration="00:00:00.167" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                            <Setter Property="BorderThickness" TargetName="ContentPresenterBorder" Value="0 1 0 0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style BasedOn="{StaticResource AppFrameExpanderStyle}" TargetType="appui:AppFrameExpander"/>
+</ResourceDictionary>

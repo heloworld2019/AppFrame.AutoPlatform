@@ -1,0 +1,90 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:appui="clr-namespace:AppFrame.AppFrameControls.AppControls">
+    <Style x:Key="AppFrameMessageStyle" TargetType="appui:AppMessagePopup">
+        <Setter Property="MinHeight" Value="50"/>
+        <Setter Property="MinWidth" Value="250"/>
+        <Setter Property="Panel.ZIndex" Value="100"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0 5 0 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="appui:AppMessagePopup">
+                    <Grid>
+                        <Border x:Name="backBorder" Width="250" 
+                                Height="50" 
+                                Background="#d3f4d6" 
+                                CornerRadius="{DynamicResource ControlCornerRadiusBase}">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0" Color="Gray" Opacity="0.5"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Border Width="20" 
+                                        Height="20" 
+                                        Margin="10" >
+                                    <Path Stretch="Fill" 
+                                          x:Name="iconPath"/>
+                                </Border>
+                                <TextBlock Grid.Column="1" 
+                                           Text="{TemplateBinding Message}"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="backBorder">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                        <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <Trigger Property="MessageType" Value="Default">
+                            <Setter Property="Background" Value="{DynamicResource MessageBackBlue}" TargetName="backBorder"/>
+                            <Setter Property="Fill" Value="{DynamicResource MessageBlue}" TargetName="iconPath"/>
+                            <Setter Property="Data" Value="{DynamicResource DefaultIcon}"
+                                    TargetName="iconPath"/>
+                            <Setter Property="Foreground" Value="{DynamicResource MessageBlue}"/>
+                        </Trigger>
+                        <Trigger Property="MessageType" Value="Success">
+                            <Setter Property="Background" Value="{DynamicResource MessageBackGreen}" TargetName="backBorder"/>
+                            <Setter Property="Fill" Value="{DynamicResource MessageGreen}" TargetName="iconPath"/>
+                            <Setter Property="Data" Value="{DynamicResource SuccessIcon}"
+                                    TargetName="iconPath"/>
+                            <Setter Property="Foreground" Value="{DynamicResource MessageGreen}"/>
+                        </Trigger>
+                        <Trigger Property="MessageType" Value="Warning">
+                            <Setter Property="Background" Value="{DynamicResource MessageBackOrange}" TargetName="backBorder"/>
+                            <Setter Property="Fill" Value="{DynamicResource MessageOrange}" TargetName="iconPath"/>
+                            <Setter Property="Data" Value="{DynamicResource WarnIcon}"
+                                    TargetName="iconPath"/>
+                            <Setter Property="Foreground" Value="{DynamicResource MessageOrange}"/>
+                        </Trigger>
+                        <Trigger Property="MessageType" Value="Error">
+                            <Setter Property="Background" Value="{DynamicResource MessageBackRed}" TargetName="backBorder"/>
+                            <Setter Property="Fill" Value="{DynamicResource MessageRed}" TargetName="iconPath"/>
+                            <Setter Property="Data" Value="{DynamicResource ErrorIcon}"
+                                    TargetName="iconPath"/>
+                            <Setter Property="Foreground" Value="{DynamicResource MessageRed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AppFrameMessageHostStyle" TargetType="appui:AppMessageHost">
+        <Setter Property="Panel.ZIndex" Value="999999"/>
+    </Style>
+    <Style BasedOn="{StaticResource AppFrameMessageStyle}" TargetType="appui:AppMessagePopup"/>
+    <Style BasedOn="{StaticResource AppFrameMessageHostStyle}" TargetType="appui:AppMessageHost"/>
+</ResourceDictionary>

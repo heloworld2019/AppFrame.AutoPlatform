@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:appui="clr-namespace:AppFrame.AppFrameControls.AppControls">
+    <Style x:Key="AppFrameTabItemStyle" TargetType="appui:AppFrameTabItem">
+        <Setter Property="MinHeight" Value="25"/>
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="6,2,6,2"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="appui:AppFrameTabItem">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="border">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" Storyboard.TargetName="border">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="2"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="Storyboard2">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="border">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
+                        <Border Background="#8e9eab" 
+                                Margin="0 0 -5 0"
+                                CornerRadius="2 35 0 0"
+                                x:Name="border">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="0" ShadowDepth="0" />
+                            </Border.Effect>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" 
+                                          ContentSource="Header" 
+                                          Focusable="False" 
+                                          HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" 
+                                          Margin="0 0 10 0"
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                          VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.ExitActions>
+                                <BeginStoryboard x:Name="Storyboard2_BeginStoryboard" Storyboard="{StaticResource Storyboard2}"/>
+                            </MultiTrigger.ExitActions>
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsSelected" Value="False"/>
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="false"/>
+                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Background" Value="Orange" TargetName="border"/>
+                            <Setter Property="Opacity" Value="0.5" TargetName="border"/>
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Left"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Background" Value="Orange" TargetName="border"/>
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Bottom"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Background" Value="Orange" TargetName="border"/>
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Right"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Background" Value="Orange" TargetName="border"/>
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true"/>
+                                <Condition Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}" Value="Top"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Background" Value="Orange" TargetName="border"/>
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style BasedOn="{StaticResource AppFrameTabItemStyle}" TargetType="appui:AppFrameTabItem"/>
+</ResourceDictionary>

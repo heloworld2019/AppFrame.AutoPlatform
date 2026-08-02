@@ -1,0 +1,168 @@
+﻿<Window x:Class="AppFrame.WpfClient.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppFrame.WpfClient.Views"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:comm="clr-namespace:AppFrame.WpfClient.Common"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:appui="clr-namespace:AppFrame.AppFrameControls.AppControls;assembly=AppFrame.AppFrameControls"
+        xmlns:hostGlobal="clr-namespace:AppFrame.AppFrameControls.Common.Global;assembly=AppFrame.AppFrameControls"
+        xmlns:exten="clr-namespace:AppFrame.WpfClient.Common.Extensions"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Title="MainView"
+        Height="768"
+        Width="1280"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="#404040"
+        Foreground="#EEEEEE"
+        FontWeight="Thin"
+        FontFamily="Co">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--顶部-->
+        <Grid Background="#353535"
+              x:Name="header">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="20 0 0 0">
+                    <Image Width="40"
+                           Height="40"
+                           Source="../Asset/AutoLogo.png">
+                        <Image.Clip>
+                            <EllipseGeometry Center="20,20"
+                                             RadiusX="20"
+                                             RadiusY="20" />
+                        </Image.Clip>
+                    </Image>
+                    <TextBlock Text="ZYD-AutoPlatform"
+                               FontSize="16"
+                               Foreground="Red"
+                               VerticalAlignment="Center"
+                               Margin="10 0 0 0" />
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Right"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0 0 10 0">
+                    <appui:AppFrameButton x:Name="btMin" 
+                                          Content="─"
+                                          Width="35"
+                                          Height="35"
+                                          Background="Transparent"
+                                          Foreground="White"
+                                          BorderThickness="0"
+                                          Type="Primary"
+                                          HoverBackground="#606060"
+                                          FontSize="20" />
+                    <appui:AppFrameButton x:Name="btMax"
+                                          Content="☐"
+                                          Width="35"
+                                          Height="35"
+                                          Background="Transparent"
+                                          Foreground="White"
+                                          BorderThickness="0"
+                                          Type="Primary"
+                                          HoverBackground="#606060"
+                                          FontSize="16" />
+                    <appui:AppFrameButton x:Name="btClose"
+                                          Content="✕"
+                                          Width="35"
+                                          Height="35"
+                                          Background="Transparent"
+                                          Foreground="White"
+                                          BorderThickness="0"
+                                          Type="Primary"
+                                          HoverBackground="#FE794E"
+                                          FontSize="16" />
+                   
+                    
+                    
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!--导航-->
+            <Grid>
+                <DockPanel>
+                    <StackPanel Margin="5 0 5 0">
+                        <ListBox x:Name="navigationListBox"
+                                 ItemContainerStyle="{StaticResource AppListBoxItemStyle}"
+                                 ItemsSource="{Binding MenuBars}"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 Foreground="White"
+                                 FontSize="14"
+                                 Margin="0 10 0 0"
+                                 SelectedIndex="0">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding NavigationSwitchCommand}"
+                                                           CommandParameter="{Binding ElementName=navigationListBox, Path=SelectedItem}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Icon}"
+                                                   FontFamily="../Asset/#iconfont"
+                                                   Margin="30 0 0 0"
+                                                   Foreground="#00d2ff" />
+                                        <TextBlock Text="{Binding Title}"
+                                                   Margin="15 0 0 0" 
+                                                   Foreground="{Binding TitleColor}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </DockPanel>
+            </Grid>
+            <!--内容-->
+            <Grid Grid.Column="1"
+                  Background="#606060">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Background="#404040">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="151*" />
+                        <ColumnDefinition Width="29*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="20,0,0,0"
+                                Grid.ColumnSpan="2">
+                        <TextBlock Text="{Binding CurrentViewIcon}"
+                                   VerticalAlignment="Center"
+                                   FontSize="16"
+                                   FontFamily="../Asset/#iconfont"
+                                   Foreground="#00d2ff" />
+                        <TextBlock Text="{Binding CurrentViewTitle}"
+                                   VerticalAlignment="Center"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Margin="10 0 0 0" />
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <appui:AppMessageHost hostGlobal:AppMessage.HostToken="{x:Static exten:AppMessageTokenExtension.GlobalMessageTokenStrings}"/>
+                    <ContentControl prism:RegionManager.RegionName="{x:Static comm:RegionNameManager.MainRegionName}">
+                    </ContentControl>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

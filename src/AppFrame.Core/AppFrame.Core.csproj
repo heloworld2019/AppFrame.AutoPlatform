@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6460868-26DD-4FB0-A556-201EB2473FD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppFrame.Core</RootNamespace>
+    <AssemblyName>AppFrame.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppFrameCommand\Interfaces\IAppCommand.cs" />
+    <Compile Include="AppFrameCommand\Interfaces\IAppCommandFactory.cs" />
+    <Compile Include="AppFrameCommand\Manager\AppCommandManager.cs" />
+    <Compile Include="AppFrameCommon\Events\AppAlarmTriggerEvent.cs" />
+    <Compile Include="AppFrameCommon\Events\AppAlarmTriggerEventArgs.cs" />
+    <Compile Include="AppFrameCommon\Events\AppOutputChangedEvent.cs" />
+    <Compile Include="AppFrameCommon\Events\AppOutputChangedEventArgs.cs" />
+    <Compile Include="AppFrameCommon\Global\AppConfigFileInfoManager.cs" />
+    <Compile Include="AppFrameCommon\Global\AppStringsResource.cs" />
+    <Compile Include="AppFrameCommon\Global\Events\AppDisposeEvent.cs" />
+    <Compile Include="AppFrameCommon\Global\GlobalObjectManager.cs" />
+    <Compile Include="AppFrameCommunication\Events\ModbusTcpClientOfflineEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\ModbusTcpClientOnlineEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\ModbusTcpServerDataMonitorChangedEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\ModbusTcpServerDataRecivedEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\ModbusTcpServerDataSendEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetClientConnectedEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetClientDataRecivedEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetClientDisconnectedEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetServerClientConnectingEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetServerClientOfflineEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetServerClientOnlineEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetServerDataRevicedEvent.cs" />
+    <Compile Include="AppFrameCommunication\Events\NetServerShutdownEvent.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\Base\IModbusBase.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\Base\IModbusClientBase.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\IAppCommnuicationFactory.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\IModbusRtuClient.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\IModbusTcpClient.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\IModbusTcpServer.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\INetClient.cs" />
+    <Compile Include="AppFrameCommunication\Interfaces\INetServer.cs" />
+    <Compile Include="AppFrameCommunication\Models\AppNetClientSession.cs" />
+    <Compile Include="AppFrameCommunication\Models\ModbusTcpClientConnectDto.cs" />
+    <Compile Include="AppFrameCommunication\Models\ModbusTcpServerDataMonitorDto.cs" />
+    <Compile Include="AppFrameCommunication\Models\ModbusTcpServerDataReciveDto.cs" />
+    <Compile Include="AppFrameCommunication\Models\ModbusTcpServerDataSendDto.cs" />
+    <Compile Include="AppFrameCommunication\Models\NetClientDataRecivedDto.cs" />
+    <Compile Include="AppFrameCommunication\Models\NetClientDisconnectedDto.cs" />
+    <Compile Include="AppFrameCommunication\Models\NetServerClientOfflineDto.cs" />
+    <Compile Include="AppFrameCommunication\Models\NetServerDataReviceDto.cs" />
+    <Compile Include="AppFrameConfig\Interfaces\IAppCommandConfiguration.cs" />
+    <Compile Include="AppFrameConfig\Interfaces\IAppConfiguration.cs" />
+    <Compile Include="AppFrameConfig\Models\AppConfigParameter.cs" />
+    <Compile Include="AppFrameElement\Interfaces\IAppIpAddress.cs" />
+    <Compile Include="AppFrameElement\Manager\AppAlarmManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppAxisElementManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppConfigInfoManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppConfigManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppDataManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppInputManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppModbusRtuManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppModbusTcpClientManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppModbusTcpServerManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppNetClientManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppNetServerManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppOutputManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppProductManager.cs" />
+    <Compile Include="AppFrameElement\Manager\AppSolenoidElementManager.cs" />
+    <Compile Include="AppFrameElement\Models\AppAlarmElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppAxisElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppConfigInfoElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppProductElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppInputElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppModbusRtuElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppModbusTcpClientElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppModbusTcpServerElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppNetClientElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppNetServerElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppDataElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppOutputElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppSolenoidElement.cs" />
+    <Compile Include="AppFrameElement\Models\AppVendorElement.cs" />
+    <Compile Include="AppFrameElement\Manager\AppVendorManager.cs" />
+    <Compile Include="AppFrameEventBus\AppEventArgsBase.cs" />
+    <Compile Include="AppFrameEventBus\AppEventBase.cs" />
+    <Compile Include="AppFrameEventBus\AppEventBus.cs" />
+    <Compile Include="AppFrameEventBus\IAppEvent.cs" />
+    <Compile Include="AppFrameEventBus\IAppEventBase.cs" />
+    <Compile Include="AppFrameException\AppConfigs\ConfigInfoNotExistException.cs" />
+    <Compile Include="AppFrameException\AppConfigs\ConfigTipException.cs" />
+    <Compile Include="AppFrameException\AppElements\ElementNotExistException.cs" />
+    <Compile Include="AppFrameException\CommunicationException\ModbusRtuConfigException.cs" />
+    <Compile Include="AppFrameException\CommunicationException\ModbusTcpConfigException.cs" />
+    <Compile Include="AppFrameException\CommunicationException\NetConfigException.cs" />
+    <Compile Include="AppFrameException\MotionAxisException\MotionAxisCardSlaveNotExistException.cs" />
+    <Compile Include="AppFrameException\MotionAxisException\MotionAxisConfigException.cs" />
+    <Compile Include="AppFrameException\MotionAxisException\MotionAxisGetCardInfoFaildException.cs" />
+    <Compile Include="AppFrameException\MotionAxisException\MotionAxisInitFaildException.cs" />
+    <Compile Include="AppFrameException\MotionAxisException\MotionAxisMasterResetFaildException.cs" />
+    <Compile Include="AppFrameException\MotionAxisException\MotionAxisMasterResetTimeoutException.cs" />
+    <Compile Include="AppFrameException\MotionAxisException\MotionAxisSlaveNotFoundException.cs" />
+    <Compile Include="AppFrameException\SloenoidException\SolenoidConfigExceptoin.cs" />
+    <Compile Include="AppFrameException\SloenoidException\SolenoidNotExistException.cs" />
+    <Compile Include="AppFrameIndustrialControl\Interfaces\IAppAxis.cs" />
+    <Compile Include="AppFrameIndustrialControl\Interfaces\IAppAxisBus.cs" />
+    <Compile Include="AppFrameIndustrialControl\Interfaces\IAppAxisBusFactory.cs" />
+    <Compile Include="AppFrameIndustrialControl\Interfaces\IAppSolenoid.cs" />
+    <Compile Include="AppFrameIndustrialControl\Interfaces\IAppSolenoidFactory.cs" />
+    <Compile Include="AppFrameIndustrialControl\Models\AppAxisProvider.cs" />
+    <Compile Include="AppFrameIndustrialControl\Models\AppSolenoidProvider.cs" />
+    <Compile Include="AppFrameLogger\IAppLogger.cs" />
+    <Compile Include="AppFrameRepository\IAppRepository.cs" />
+    <Compile Include="AppFrameRepository\IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AppFrame.Common\AppFrame.Common.csproj">
+      <Project>{AE835B66-1622-464A-A481-052534DB39D3}</Project>
+      <Name>AppFrame.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppFrame.Entity\AppFrame.Entity.csproj">
+      <Project>{A19B3E34-93EF-4520-A805-883CF01D35FF}</Project>
+      <Name>AppFrame.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

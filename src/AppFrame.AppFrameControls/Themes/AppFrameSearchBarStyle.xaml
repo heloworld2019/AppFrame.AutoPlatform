@@ -1,0 +1,113 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:appui="clr-namespace:AppFrame.AppFrameControls.AppControls"
+                    >
+    <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="False"
+                                CornerRadius="0 20 20 0">
+                        <ContentPresenter x:Name="contentPresenter" 
+                                          Focusable="False" 
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          Margin="{TemplateBinding Padding}" 
+                                          RecognizesAccessKey="True" 
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AppFrameSearchBarStyle" TargetType="appui:AppFrameSearchBar">
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="MinWidth" Value="300"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="appui:AppFrameSearchBar">
+                    <Border 
+                            x:Name="backBorder"
+                            CornerRadius="20"
+                            BorderThickness="1"
+                            Background="#404040">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox BorderThickness="0"                         
+                                     VerticalContentAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     BorderBrush="Transparent"
+                                     Background="Transparent"
+                                     Foreground="White"
+                                     Padding="15 0 0 0"
+                                     CaretBrush="White"
+                                     x:Name="textBox"/>
+                            <TextBlock Text="{TemplateBinding WaterText}" 
+                                       Foreground="#8e9eab" 
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False" 
+                                       Padding="15 0 0 0"
+                                       Visibility="Collapsed"
+                                       x:Name="waterText"/>
+                            <Button Grid.Column="1" 
+                                    Width="60"
+                                    Background="#353030"
+                                    Foreground="#fc4a1a"                                   
+                                    Style="{DynamicResource ButtonStyle}"
+                                    x:Name="button"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    Command="{TemplateBinding SearchCommand}"
+                                    CommandParameter="{TemplateBinding SearchCommandParameter}"
+                                    >
+                                <Grid Width="20" Height="20">
+                                    <Path Stretch="Fill"
+                                          Fill="#fc4a1a"
+                                          x:Name="pathIcon"
+                                          Data="M933.602 831.47 721.175 617.262c-2.472-2.479-5.204-4.372-7.813-6.435 35.884-55.518 56.836-121.647 56.836-192.878 0-195.694-157.298-354.31-351.461-354.31-194.054 0-351.461 158.616-351.461 354.31 0 195.722 157.407 354.302 351.461 354.302 70.631 0 136.303-21.179 191.459-57.361 2.009 2.692 3.852 5.369 6.283 7.827l212.454 214.235c14.506 14.579 33.396 21.849 52.314 21.849 18.932 0 37.836-7.268 52.328-21.814C962.436 907.824 962.436 860.61 933.602 831.47M418.737 660.37c-132.562 0-240.468-108.767-240.468-242.421 0-133.634 107.907-242.428 240.468-242.428 132.561 0 240.467 108.794 240.467 242.428C659.204 551.602 551.298 660.37 418.737 660.37"/>
+                                </Grid>
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=textBox,Path=Text}" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Visible" TargetName="waterText"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=textBox,Path=Text}" Value="">
+                            <Setter Property="Visibility" Value="Visible" TargetName="waterText"/>
+                        </DataTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="#fc4a1a" TargetName="backBorder"/>
+                            <Setter Property="Background" Value="#373036" TargetName="backBorder"/>
+                            <Setter Property="Background" Value="#fc4a1a" TargetName="button"/>
+                            <Setter Property="Foreground" Value="White" TargetName="button"/>
+                            <Setter Property="Fill" Value="White" TargetName="pathIcon"/>
+                        </Trigger>
+                        <Trigger Property="ThemeType" Value="Dark">
+                            <Setter Property="Foreground" Value="White" TargetName="textBox"/>
+                            <Setter Property="CaretBrush" Value="White" TargetName="textBox"/>
+                            <Setter Property="Background" Value="#404040" TargetName="backBorder"/>
+                        </Trigger>
+                        <Trigger Property="ThemeType" Value="Light">
+                            <Setter Property="Foreground" Value="Black" TargetName="textBox"/>
+                            <Setter Property="CaretBrush" Value="Black" TargetName="textBox"/>
+                            <Setter Property="Background" Value="#DBDBDB" TargetName="backBorder"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style BasedOn="{StaticResource AppFrameSearchBarStyle}" TargetType="appui:AppFrameSearchBar"/>
+</ResourceDictionary>
