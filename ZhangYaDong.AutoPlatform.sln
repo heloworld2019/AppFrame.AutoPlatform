@@ -1,17 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.8.12009.203 stable
+VisualStudioVersion = 18.8.12009.203
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Application_业务应用层", "AppFrame.Application_业务应用层", "{7BDAC6C8-07C6-46B4-A2E1-87DA7C09B7AA}"
+	ProjectSection(SolutionItems) = preProject
+		业务应用层作用及说明.txt = 业务应用层作用及说明.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Core_领域能力抽象", "AppFrame.Core_领域能力抽象", "{196B7E60-C831-43C9-9A63-AF991C443405}"
+	ProjectSection(SolutionItems) = preProject
+		领域层作用及说明.txt = 领域层作用及说明.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Infrastructrue_接口实现层", "AppFrame.Infrastructrue_接口实现层", "{D5FF0278-D404-4A97-8C74-CD64C1D4FF26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.Common_通用基础公共层", "AppFrame.Common_通用基础公共层", "{DB7651C3-109C-4127-B0BD-024F4908C0B7}"
+	ProjectSection(SolutionItems) = preProject
+		基础设施作用及说明.txt = 基础设施作用及说明.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFrame.AppClient_程序入口及公共资源字典", "AppFrame.AppClient_程序入口及公共资源字典", "{D1E2A633-9603-4CF3-A606-733355A3426F}"
+	ProjectSection(SolutionItems) = preProject
+		技术说明.txt = 技术说明.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFrame.Application", "src\AppFrame.Application\AppFrame.Application.csproj", "{9D602443-E8D5-440E-A5FC-E12CF25A2F16}"
 EndProject

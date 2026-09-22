@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="AppFrame.WpfClient.Views.HistoryCurveView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AppFrame.WpfClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1080">
+
+    <Grid>
+        <Grid.RowDefinitions  >
+            <RowDefinition  />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+         
+        <Border Background="LightBlue" Grid.Row="0" Grid.Column="0"/>
+        <Border Background="LightGreen" Grid.Row="0" Grid.Column="1"/>
+        <Border Background="LightCyan" Grid.Row="1" Grid.Column="0"/>
+        <Border Background="LightCoral" Grid.Row="1" Grid.Column="1"/>
+
+    </Grid>
+</UserControl>

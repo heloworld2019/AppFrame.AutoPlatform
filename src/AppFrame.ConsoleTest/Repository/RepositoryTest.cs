@@ -24,7 +24,7 @@ namespace AppFrame.ConsoleTest.Repository
         public RepositoryTest(AppIoc appIoc)
         {
             _appIoc = appIoc;
-            _unitOfWork = _appIoc.Resove<IUnitOfWork>();
+            _unitOfWork = _appIoc.Resolve<IUnitOfWork>();
             _userRepository = _unitOfWork.GetRepository<AppUser>();
             _roleRepository = _unitOfWork.GetRepository<AppRole>();
             _permissionRepository = _unitOfWork.GetRepository<AppPermission>();

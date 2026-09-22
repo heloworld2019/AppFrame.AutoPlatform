@@ -1,0 +1,11 @@
+硬件原始采集读写 → Infrastructure 基础设施
+业务规则、状态判定、告警逻辑 → Domain 领域服务
+流程编排、协调采集 + 领域 + 数据库 → Application 应用服务
+UI 定时器、命令、DTO 转 UI 绑定集合 → ViewModel（Prism 表示层）
+界面显示绑定 → View
+
+
+实体 (Entity)：有唯一 ID，会变化，如：工位 Station、产品 Product。
+值对象 (Value Object)：没有 ID，描述属性，如：告警编码、工艺参数。
+聚合根 (Aggregate Root)：一组关联对象的总入口，对外只操作聚合根。
+领域服务 (DomainService)：不属于单一实体的复杂业务规则，放这里。

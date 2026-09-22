@@ -9,10 +9,10 @@ namespace AppFrame.WpfClient.Models
     public class AppInputVo
     {
         public string InputName { get; set; }
-        public int Index { get; set; }
+        public int    Index { get; set; }
         public string ParameterName { get; set; }
         public string ParameterDescription { get; set; }
-        public bool Enable { get; set; }
-        public bool Value { get; set; }
+        public bool   Enable { get; set; }
+        public bool   Value { get; set; }
     }
 }

@@ -14,12 +14,7 @@
 
 
         <StackPanel>
-            <TextBlock Text="张亚东的日志记录器" FontSize="20" Margin="10"/>
-            <Button Content="Clear Logs" Width="100" Height="30" Margin="10" Background="Green"/>  
-            <Label Content="Logs:我的标签" Margin="10" Width="300" Height="100"  />
-            <TextBlock Name="LogsTextBlock" Margin="10" TextWrapping="Wrap"  Height="400" Text="nihaoya"/>
-
-
+         
         </StackPanel>
         
         

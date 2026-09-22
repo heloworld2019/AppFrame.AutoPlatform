@@ -7,9 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AppFrame.WpfClient.Models
+
 {
+
+    //只保存数据，只负责发出属性变更通知，不负责 “什么时候变”。  Model 只是数据载体，不能依赖设备服务，会造成耦合严重。
     public class DeviceStationInfo : BindableBase
     {
+        private string _stationName;
         private DeviceStationState _stationState;
         private string _runingInfo;
         private string _alarmInfo;
@@ -21,6 +25,8 @@ namespace AppFrame.WpfClient.Models
 			RuningInfo = runingInfo;
 			AlarmInfo = alarmInfo;
 		}
+
+
 
 		public string StationName { get; set; }	
         public DeviceStationState StationState

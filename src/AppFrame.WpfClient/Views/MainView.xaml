@@ -24,7 +24,7 @@
         FontFamily="Co">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
+            <RowDefinition Height="40" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <!--顶部-->
@@ -33,8 +33,8 @@
             <DockPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="20 0 0 0">
-                    <Image Width="40"
-                           Height="40"
+                    <Image Width="30"
+                           Height="30"
                            Source="../Asset/AutoLogo.png">
                         <Image.Clip>
                             <EllipseGeometry Center="20,20"
@@ -46,8 +46,11 @@
                                FontSize="16"
                                Foreground="Red"
                                VerticalAlignment="Center"
-                               Margin="10 0 0 0" />
+                               Margin="10 10 0 0" />
+
+                    <!--<TextBlock x:Name="AlarmViewInfo"  Text="报警信息"   Foreground="Red"  Width="500"  VerticalAlignment="Center" Margin="500 0 0 0"   HorizontalAlignment="Center"  />-->
                 </StackPanel>
+                
                 <StackPanel DockPanel.Dock="Right"
                             Orientation="Horizontal"
                             HorizontalAlignment="Right"

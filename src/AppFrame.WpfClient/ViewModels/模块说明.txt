@@ -1,0 +1,11 @@
+﻿✅允许：
+通过 DI 容器（AppServiceProvider）Resolve 业务服务 IProductService、IPlcService
+维护 UI 状态集合：ObservableCollection<DataBar>、ObservableCollection<DeviceStationInfo>
+命令DelegateCommand，接收页面按钮操作（复位、启停），调用服务
+定时器（DispatcherTimer）、模拟数据、数据映射组装（把 DTO 转成 UI 可绑定 Model）
+异常捕获、UI 状态控制（断线显示 "--"）
+❌禁止：
+直接写 Modbus/OpcUA/TwinCAT 底层 PLC 采集代码
+核心业务规则（生产计数逻辑、良品判定逻辑、联锁逻辑），这些下沉到 Service 层
+大量复杂 if/else 业务判断
+一句话：ViewModel 只关心页面要展示什么、用户操作要触发什么服务调用。

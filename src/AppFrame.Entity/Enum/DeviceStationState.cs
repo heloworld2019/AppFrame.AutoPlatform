@@ -10,5 +10,7 @@ namespace AppFrame.Entity.Enum
     {
         Runing,
         Alarming,
+        Stop,
+        Idle
     }
 }

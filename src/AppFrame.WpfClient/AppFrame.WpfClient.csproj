@@ -127,22 +127,25 @@
     <Compile Include="Common\Extensions\RegexPattenExternsion.cs" />
     <Compile Include="Common\Interfaces\IStartupConfiguration.cs" />
     <Compile Include="Common\RegionNameManager.cs" />
-    <Compile Include="Models\AppAlarmVo.cs" />
-    <Compile Include="Models\AppAxisRealtimeDataVo.cs" />
-    <Compile Include="Models\AppAxisVo.cs" />
-    <Compile Include="Models\AppDataVo.cs" />
-    <Compile Include="Models\AppInputVo.cs" />
-    <Compile Include="Models\AppOutputVo.cs" />
-    <Compile Include="Models\AppProductVo.cs" />
-    <Compile Include="Models\AppSolenoidVo.cs" />
-    <Compile Include="Models\DataBar.cs" />
-    <Compile Include="Models\DeviceStationInfo.cs" />
-    <Compile Include="Models\MenuBar.cs" />
+    <Compile Include="Models\ModelsVo\AppAlarmVo.cs" />
+    <Compile Include="Models\ModelsVo\AppAxisRealtimeDataVo.cs" />
+    <Compile Include="Models\ModelsVo\AppAxisVo.cs" />
+    <Compile Include="Models\ModelsVo\AppDataVo.cs" />
+    <Compile Include="Models\ModelsVo\AppInputVo.cs" />
+    <Compile Include="Models\ModelsVo\AppOutputVo.cs" />
+    <Compile Include="Models\ModelsVo\AppProductVo.cs" />
+    <Compile Include="Models\ModelsVo\AppSolenoidVo.cs" />
+    <Compile Include="Models\ParameterView\DataBar.cs" />
+    <Compile Include="Models\ParameterView\DeviceStationInfo.cs" />
+    <Compile Include="Models\ParameterView\MenuBar.cs" />
     <Compile Include="Models\ParameterView\AxisPositionParameter.cs" />
     <Compile Include="Models\ParameterView\SolenoidParameter.cs" />
+    <Compile Include="ViewModels\RecipeEditViewModel.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\DataStatisticsViewModel.cs" />
+    <Compile Include="ViewModels\HistoryCurveModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\IoMonitorViewModel.cs" />
     <Compile Include="ViewModels\LoggerViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\OperationViewModel.cs" />
@@ -156,8 +159,14 @@
     <Compile Include="Views\DataStatisticsView.xaml.cs">
       <DependentUpon>DataStatisticsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\HistoryCurveView .xaml.cs">
+      <DependentUpon>HistoryCurveView .xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\IndexView.xaml.cs">
       <DependentUpon>IndexView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IoMonitorView.xaml.cs">
+      <DependentUpon>IoMonitorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoggerView.xaml.cs">
       <DependentUpon>LoggerView.xaml</DependentUpon>
@@ -170,6 +179,9 @@
     </Compile>
     <Compile Include="Views\ParameterSettingView.xaml.cs">
       <DependentUpon>ParameterSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipeEditView.xaml.cs">
+      <DependentUpon>RecipeEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SystemConfigView.xaml.cs">
       <DependentUpon>SystemConfigView.xaml</DependentUpon>
@@ -200,7 +212,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\HistoryCurveView .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\IndexView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IoMonitorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +237,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ParameterSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RecipeEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -308,6 +332,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Device2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Models\模块说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\模块说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ViewModels\模块说明.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

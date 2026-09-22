@@ -33,7 +33,7 @@ namespace AppFrame.WpfClient.Common.AutoMappers
 
             CreateMap<AppInputDto, AppInputVo>().ReverseMap();
             CreateMap<AppOutputDto, AppOutputVo>().ReverseMap();
-            CreateMap<AppAlarmDto, AppAlarmVo>().ReverseMap();
+            CreateMap<AppAlarmDto, AppAlarmVo>().ReverseMap();   //报警 映射
             CreateMap<AppDataDto, AppDataVo>().ReverseMap();
 
             CreateMap<AppSolenoidElement, AppSolenoidDto>().ReverseMap(); // 流转载体

@@ -32,23 +32,23 @@ namespace AppFrame.WpfClient.Common.DependencyInjection
     {
         public AppServiceProvider()
         {
-            _services = new ServiceCollection();
-            RegisterService(_services);
-            _serviceProvider = _services.BuildServiceProvider();
+            _services = new ServiceCollection();                      // 创建一个新的服务集合，用于注册服务和依赖项
+            RegisterService(_services);                               //执行批量注册
+            _serviceProvider = _services.BuildServiceProvider();      // 构建服务提供者，用于解析已注册的服务
         }
-        private readonly IServiceProvider _serviceProvider;
-        private readonly IServiceCollection _services;
-        private void RegisterService(IServiceCollection services)
+        private readonly IServiceProvider _serviceProvider;            // 服务提供者，用于解析已注册的服务
+        private readonly IServiceCollection _services;                 // 服务集合，用于注册服务和依赖项
+        private void RegisterService(IServiceCollection services)      // 批量注册服务和依赖项 ,批量注册入口
         {
             //仓储层
-            services.AddUnitOfWork()
+            services.AddUnitOfWork()         // 链式调用，注册仓储层的服务和依赖项 ，调用返回的是服务集合，可以链式调用
                     .AddCustomRepository<AppUser, UserRepository>()
                     .AddCustomRepository<AppRole, RoleRepository>()
                     .AddCustomRepository<UserRole, UserRoleRepository>()
                     .AddCustomRepository<RolePermission, RolePermissionRepository>()
                     .AddCustomRepository<AppPermission, PermissionRepository>();
 
-            //基础层
+            //基础层                                                                // 整个应用程序只创建 1 个实例，适合日志、配置、总线工厂；WPF 全局共享对象
             services.AddSingleton<IAppLogger, AppLogger>()
                     .AddSingleton<IAppConfiguration, AppConfiguration>()
                     .AddSingleton<IAppAxisBusFactory, AppAxisBusFactory>()
@@ -69,7 +69,9 @@ namespace AppFrame.WpfClient.Common.DependencyInjection
         }
         public T Resolve<T>()
         {
-            return _serviceProvider.GetRequiredService<T>();
+            return _serviceProvider.GetRequiredService<T>();    // 解析已注册的服务，返回指定类型的实例
+
+
         }
     }
 }

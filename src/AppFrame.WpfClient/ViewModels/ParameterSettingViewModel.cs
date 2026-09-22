@@ -37,6 +37,10 @@ namespace AppFrame.WpfClient.ViewModels
             get { return _solenoidParameters; }
             set { _solenoidParameters = value; RaisePropertyChanged(); }
         }
+
+
+
+
         /// <summary>
         /// 轴位置参数
         /// </summary>
@@ -58,7 +62,12 @@ namespace AppFrame.WpfClient.ViewModels
                 return;
             }
             ParameterPageIndex = result;
+
         }
+
+
+
+       
         private void GetParameter()
         {
             SolenoidParameters = new ObservableCollection<SolenoidParameter>()
@@ -71,7 +80,11 @@ namespace AppFrame.WpfClient.ViewModels
                 new SolenoidParameter("原点到达延时","控制气缸到达原点位的延时时间",false,0.2,false,"\ue650"),
                 new SolenoidParameter("动点动作时间","动点感应屏蔽后，通过此时间判断是否达到动点位",false,1.0,false, "\ue650"),
                 new SolenoidParameter("原点动作时间","原点感应屏蔽后，通过此时间判断是否达到原点位",false,1.0,false, "\ue650"),
+                new SolenoidParameter("zhang","xiadao",false,1.0,false, "\ue650"),
             };
+
+
+
             AxisPositionParameters = new ObservableCollection<AxisPositionParameter>()
             {
                 new AxisPositionParameter("默认位置0",-10.15,0.00),

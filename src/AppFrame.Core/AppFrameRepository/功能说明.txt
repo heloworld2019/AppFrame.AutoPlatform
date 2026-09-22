@@ -1,0 +1,1 @@
+﻿仓储 Repository | AppFrame.Core.AppFrameRepository | 配置持久化（XML / 数据库）读写领域配置实体 | IAppRepository<AppInputElement> |

@@ -46,11 +46,11 @@
     <Compile Include="AppAttribute\Assembly\AssemblyAuthorAttribute.cs" />
     <Compile Include="AppAttribute\Assembly\AssemblyUpdateTimeAttribute.cs" />
     <Compile Include="AppAttribute\Filter\ConfigFilterAttribute.cs" />
-    <Compile Include="AppAttribute\Validate\AppRegexAttribute.cs" />
-    <Compile Include="AppAttribute\Validate\AppRequiredAttribute.cs" />
-    <Compile Include="AppAttribute\Validate\AppStringRangeAttribute.cs" />
-    <Compile Include="AppAttribute\Validate\AppValueRangeAttribute.cs" />
-    <Compile Include="AppAttribute\Validate\ValidateBaseAttribute.cs" />
+    <Compile Include="AppAttribute\Validate_校验\AppRegexAttribute.cs" />
+    <Compile Include="AppAttribute\Validate_校验\AppRequiredAttribute.cs" />
+    <Compile Include="AppAttribute\Validate_校验\AppStringRangeAttribute.cs" />
+    <Compile Include="AppAttribute\Validate_校验\AppValueRangeAttribute.cs" />
+    <Compile Include="AppAttribute\Validate_校验\ValidateBaseAttribute.cs" />
     <Compile Include="AppFiles\CurrencyFileHelper.cs" />
     <Compile Include="AppFiles\XmlFileHelper.cs" />
     <Compile Include="AppList\AppListBase.cs" />

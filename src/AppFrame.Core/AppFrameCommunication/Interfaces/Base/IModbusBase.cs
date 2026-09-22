@@ -31,7 +31,7 @@ namespace AppFrame.Core.AppFrameCommunication.Interfaces.Base
                    ulong[] ulongValue = null,
                    long[] longValue = null,
                    float[] floatValue = null,
-                   double[] doubelValue = null,
+                   double[] doubleValue = null,
                    string stringValue = null
                    );
 

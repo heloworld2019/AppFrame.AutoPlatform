@@ -26,3 +26,5 @@ namespace AppFrame.Core.AppFrameElement.Manager
         public override AppOutputElement this[string name] => _items.FirstOrDefault(p => p.ParameterName.Equals(name));
     }
 }
+
+//程序启动后，存放所有 DO 静态配置；全局可以按ParameterName查找 DO 配置。

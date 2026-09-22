@@ -24,34 +24,34 @@ namespace AppFrame.Common.Extensions.Enums
             }
             return enumName.ToString();
         }
-        public static string GetDisplayDescription(this Enum enumName)
+        public static string GetDisplayDescription(this Enum enumName) // 根据枚举值获取 DisplayAttribute 的 Description 属性
         {
             return GetDisplay(enumName, "Description");
         }
-        public static string GetName(this Enum enumName)
+        public static string GetName(this Enum enumName)  // 根据枚举值获取 DisplayAttribute 的 Name 属性
         {
             return GetDisplay(enumName, "Name");
         }
-        public static string GetGroupName(this Enum enumName)
+        public static string GetGroupName(this Enum enumName)  // 根据枚举值获取 DisplayAttribute 的 GroupName 属性
         {
             return GetDisplay(enumName, "GroupName");
         }
-        public static string GetPrompt(this Enum enumName)
+        public static string GetPrompt(this Enum enumName)// 根据枚举值获取 DisplayAttribute 的 Prompt 属性
         {
             return GetDisplay(enumName, "Prompt");
         }
-        public static string GetShortName(this Enum enumName)
+        public static string GetShortName(this Enum enumName)// 根据枚举值获取 DisplayAttribute 的 ShortName 属性
         {
             return GetDisplay(enumName, "ShortName");
         }
         public static int GetOrder(this Enum enumName)
         {
-            int.TryParse(GetDisplay(enumName, "Order"), out int result);
+            int.TryParse(GetDisplay(enumName, "Order"), out int result); // 根据枚举值获取 DisplayAttribute 的 Order 属性
             return result;
         }
         public static bool GetAutoGenerateField(this Enum enumName)
         {
-            bool.TryParse(GetDisplay(enumName, "AutoGenerateField"), out bool result);
+            bool.TryParse(GetDisplay(enumName, "AutoGenerateField"), out bool result); // 根据枚举值获取 DisplayAttribute 的 AutoGenerateField 属性
             return result;
         }
         public static bool GetAutoGenerateFilter(this Enum enumName)

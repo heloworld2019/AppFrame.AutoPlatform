@@ -19,6 +19,7 @@ namespace AppFrame.Core.AppFrameCommand.Manager
         {
 
         }
-        public IAppCommand this[Guid guid] => _items.FirstOrDefault(p => p.CommandGuid.Equals(guid));
+
+        public IAppCommand this[Guid guid] => _items.FirstOrDefault(p => p.CommandGuid.Equals(guid)); // 索引器重载 不再只用数字下标访问；支持直接用Guid去查找命令
     }
 }

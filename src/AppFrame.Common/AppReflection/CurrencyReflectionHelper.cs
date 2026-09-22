@@ -7,9 +7,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppFrame.Common.AppReflection
+namespace AppFrame.Common.AppReflection  
 {
-    public static class CurrencyReflectionHelper
+    public static class CurrencyReflectionHelper  // 插件框架，动态外部 dll 模块加载，不需要硬引用程序集；适合插件式工控框架。
     {
         /// <summary>
         /// 加载目录下实现指定接口的dll

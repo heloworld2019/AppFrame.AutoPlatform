@@ -14,6 +14,8 @@ namespace AppFrame.Core.AppFrameCommon.Global.Events
     {
 
     }
+
+
     public class AppDisposeEventArgs : AppEventArgsBase<bool>
     {
 

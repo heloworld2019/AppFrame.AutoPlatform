@@ -56,7 +56,7 @@ namespace AppFrame.Infrastructrue.DependencyInjection
                     .AddScoped<IProductService, ProductService>();
 
         }
-        public T Resove<T>()
+        public T Resolve<T>()
         {
             return _serviceProvider.GetRequiredService<T>();
         }

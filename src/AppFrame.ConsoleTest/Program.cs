@@ -38,7 +38,7 @@ namespace AppFrame.ConsoleTest
         }
         static void LoggerTest()
         {
-            IAppLogger logger = _appIoc.Resove<IAppLogger>();
+            IAppLogger logger = _appIoc.Resolve<IAppLogger>();
             logger.Debug("测试debug日志");
             logger.Info("测试Info日志");
             logger.Warn("测试Warn日志");

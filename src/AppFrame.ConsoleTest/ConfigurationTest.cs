@@ -16,7 +16,7 @@ namespace AppFrame.ConsoleTest
         private readonly IAppConfiguration _appConfiguration;
         public ConfigurationTest(AppIoc appIoc)
         {
-            _appConfiguration = appIoc.Resove<IAppConfiguration>();
+            _appConfiguration = appIoc.Resolve<IAppConfiguration>();
         }
         private void GenerateDefaultData()
         {

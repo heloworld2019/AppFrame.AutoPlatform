@@ -1,0 +1,7 @@
+﻿文件夹一般：Views，包含.xaml + 后置代码.xaml.cs
+定位：纯 UI 展示，只做绑定，不写业务和硬件代码
+xaml：布局、样式、ItemsControl、DataTemplate、绑定表达式 {Binding xxx}
+xaml.cs：极少代码，仅页面生命周期、实现IDestructible做资源释放（定时器 / 订阅取消）
+能力：接收用户点击，通过 Command 转发给 ViewModel；监听 ViewModel 属性变化自动渲染界面
+❌禁止：PLC 读取、业务判断、实例化服务、复杂逻辑
+原则：View 不知道 PLC、不知道产品业务，只认 ViewModel 暴露出来的属性和命令。

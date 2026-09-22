@@ -30,7 +30,7 @@ namespace AppFrame.Entity.AppPermission
         public string Account { get; set; }
         [AppRequired(ErrorInfo = "密码不能为空")]
         public string Password { get; set; }
-        [Navigate(typeof(UserRole), nameof(UserRole.UserId), nameof(UserRole.RoleId))]
+        [Navigate(typeof(UserRole), nameof(UserRole.UserId), nameof(UserRole.RoleId))] //  中间表实体类型 ，中间表里的本实体Id字段名（外键），中间表里关联的目标实体Id字段名 （外键)
         public List<AppRole> Roles { get; set; }
     }
 }

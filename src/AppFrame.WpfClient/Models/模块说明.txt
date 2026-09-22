@@ -1,0 +1,7 @@
+﻿
+Models
+
+存放：DataBar、DeviceStationInfo、AppProductVo这类实体类
+能力：属性 + RaisePropertyChanged（属性变更通知，给 WPF 绑定引擎用）
+允许：字段、属性、简单构造函数
+❌禁止：读 PLC、数据库、业务判断、定时器、任何服务调用

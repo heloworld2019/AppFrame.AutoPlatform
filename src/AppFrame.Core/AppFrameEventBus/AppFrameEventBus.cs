@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AppFrame.Core.AppFrameEventBus
 {
-    public sealed class AppEventBus
+    public sealed class AppEventBus  // 事件总线 密封单列类
     {
-        private readonly ConcurrentDictionary<Type, IAppEventBase> _events = new ConcurrentDictionary<Type, IAppEventBase>();
+        private readonly ConcurrentDictionary<Type, IAppEventBase> _events = new ConcurrentDictionary<Type, IAppEventBase>(); // 事件容器
         private readonly static object _lock = new object();
         private static AppEventBus _instance;
         private AppEventBus()
@@ -29,7 +29,7 @@ namespace AppFrame.Core.AppFrameEventBus
         /// </summary>
         /// <typeparam name="TEvent">事件模型</typeparam>
         /// <returns></returns>
-        public TEvent GetEvent<TEvent>() where TEvent : IAppEventBase
+        public TEvent GetEvent<TEvent>() where TEvent : IAppEventBase  // 获取事件
         {
             if (_events.ContainsKey(typeof(TEvent)))
             {

@@ -11,6 +11,12 @@ namespace AppFrame.Core.AppFrameElement.Models
     /// <summary>
     /// 输入元件
     /// </summary>
+    /// 
+
+  //  静态配置：从配置文件读取。存储 IO 点位的固定参数：索引、参数 ID、InputName点位名称、启用标记、描述信息。
+  //只保存静态配置，不存实时采集值。
+
+
     public class AppInputElement: AppConfigParameter
     {
         public AppInputElement()

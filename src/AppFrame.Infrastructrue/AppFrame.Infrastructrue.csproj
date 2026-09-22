@@ -99,17 +99,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppFrameCommand\AppCommandFactory.cs" />
-    <Compile Include="AppFrameCommand\AxisAbsCommand.cs" />
-    <Compile Include="AppFrameCommand\AxisHomeCommand.cs" />
-    <Compile Include="AppFrameCommand\AxisRelCommand.cs" />
-    <Compile Include="AppFrameCommand\Base\AxisBaseCommand.cs" />
-    <Compile Include="AppFrameCommand\Base\SolenoidBaseCommand.cs" />
-    <Compile Include="AppFrameCommand\DelayCommand.cs" />
-    <Compile Include="AppFrameCommand\SolenoidBackCommand.cs" />
-    <Compile Include="AppFrameCommand\SolenoidGoCommand.cs" />
-    <Compile Include="AppFrameCommand\WaitInputCommand.cs" />
-    <Compile Include="AppFrameCommand\WriteOutputCommand.cs" />
+    <Compile Include="AppFrameCommand\Base\AppCommandFactory.cs" />
+    <Compile Include="AppFrameCommand\Axis\AxisAbsCommand.cs" />
+    <Compile Include="AppFrameCommand\Axis\AxisHomeCommand.cs" />
+    <Compile Include="AppFrameCommand\Axis\AxisRelCommand.cs" />
+    <Compile Include="AppFrameCommand\Axis\AxisBaseCommand.cs" />
+    <Compile Include="AppFrameCommand\Solenoid\SolenoidBaseCommand.cs" />
+    <Compile Include="AppFrameCommand\Base\DelayCommand.cs" />
+    <Compile Include="AppFrameCommand\Solenoid\SolenoidBackCommand.cs" />
+    <Compile Include="AppFrameCommand\Solenoid\SolenoidGoCommand.cs" />
+    <Compile Include="AppFrameCommand\InOutPut\WaitInputCommand.cs" />
+    <Compile Include="AppFrameCommand\InOutPut\WriteOutputCommand.cs" />
     <Compile Include="AppFrameCommunication\AppModbusRtuClient.cs" />
     <Compile Include="AppFrameCommunication\AppModbusTcpClient.cs" />
     <Compile Include="AppFrameCommunication\AppModbusTcpServer.cs" />
@@ -134,7 +134,7 @@
     <Compile Include="AppFrameRepository\UnitOfWork.cs" />
     <Compile Include="AppFrameRepository\UnitOfWorkExtension.cs" />
     <Compile Include="AutoMappers\AutoMapperProfile.cs" />
-    <Compile Include="DependencyInjection\AppIoc.cs" />
+    <Compile Include="DependencyInjection_服务依赖注入\AppIoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

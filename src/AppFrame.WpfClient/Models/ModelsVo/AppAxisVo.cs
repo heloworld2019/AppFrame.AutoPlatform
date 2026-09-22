@@ -27,8 +27,8 @@ namespace AppFrame.WpfClient.Models
         public double RunAcc { get; set; }
         public double RunDec { get; set; }
         public double StopTime { get; set; }
-        public bool PositiveSoftLimitEnable { get; set; }
-        public bool NegitiveSoftLimitEnable { get; set; }
+        public bool   PositiveSoftLimitEnable { get; set; }
+        public bool   NegitiveSoftLimitEnable { get; set; }
         public double PositiveSoftLimit { get; set; }
         public double NegitiveSoftLimit { get; set; }
         public double LocationTimeOut { get; set; }

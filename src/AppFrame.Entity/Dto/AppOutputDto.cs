@@ -8,11 +8,11 @@ namespace AppFrame.Entity.Dto
 {
     public class AppOutputDto
     {
-        public string OutputName { get; set; }
-        public int Index { get; set; }
-        public string ParameterName { get; set; }
-        public string ParameterDescription { get; set; }
-        public bool Enable { get; set; }
-        public bool Value { get; set; }
+        public string      OutputName    { get; set; }
+        public int         Index         { get; set; }
+        public string      ParameterName { get; set; }
+        public string      ParameterDescription { get; set; }
+        public bool        Enable { get; set; }
+        public bool        Value { get; set; }
     }
 }

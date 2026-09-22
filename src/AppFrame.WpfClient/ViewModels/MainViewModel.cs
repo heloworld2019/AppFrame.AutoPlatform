@@ -34,22 +34,23 @@ namespace AppFrame.WpfClient.ViewModels
         private ObservableCollection<MenuBar> _menuBars;
         private string _currentViewIcon;
         private string _currentViewTitle;
-        public string CurrentViewIcon
+
+        public string CurrentViewIcon    // 当前视图的图标
         {
             get { return _currentViewIcon; }
             set { _currentViewIcon = value; RaisePropertyChanged(); }
         }
-        public string CurrentViewTitle
+        public string CurrentViewTitle  // 当前视图的标题
         {
             get { return _currentViewTitle; }
             set { _currentViewTitle = value; RaisePropertyChanged(); }
         }
-        public ObservableCollection<MenuBar> MenuBars
+        public ObservableCollection<MenuBar> MenuBars   // 菜单栏集合    
         {
             get { return _menuBars; }
             set { _menuBars = value; RaisePropertyChanged(); }
         }
-        public ICommand NavigationSwitchCommand => new DelegateCommand<MenuBar>(NavigationSwitch);
+        public ICommand NavigationSwitchCommand => new DelegateCommand<MenuBar>(NavigationSwitch); // 导航切换命令
 
         private void NavigationSwitch(MenuBar menu)
         {
@@ -72,6 +73,9 @@ namespace AppFrame.WpfClient.ViewModels
                 new MenuBar("\ue603","设备操作","OperationView","White"),
                 new MenuBar("\ue69b","参数维护","ParameterSettingView", "White"),
                 new MenuBar("\ue600","数据统计","DataStatisticsView", "White"),
+                new MenuBar("\ue605","实时曲线","HistoryCurveView", "White"),
+                new MenuBar("\ue64b","配方编辑","RecipeEditView", "White"),
+                new MenuBar("\ue607","Io监视","IoMonitorView", "White"),
                 new MenuBar("\ue60c","日志信息","LoggerView", "White"),
                 new MenuBar("\ue66e","用户管理","UserManagerView", "White"),
                 new MenuBar("\ue619","系统设置","SystemConfigView", "White"),

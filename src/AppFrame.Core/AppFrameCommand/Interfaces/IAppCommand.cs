@@ -66,6 +66,31 @@ namespace AppFrame.Core.AppFrameCommand.Interfaces
         /// 异步执行命令
         /// </summary>
         /// <returns></returns>
-        Task ExecuteCommandAsync();
+        /// 
+
+       // void CancelCommand();//zyd add
+         // 取消命令
+
+
+        Task ExecuteCommandAsync(); // 异步线程
+
+
+
     }
 }
+
+
+
+
+
+
+//统一脚本 / 步骤命令抽象
+//配方脚本、工艺步骤，每一步都是一个IAppCommand，命令管理器统一调度，不用关心具体是什么命令（轴移动、开关阀、读写寄存器）。
+//统一状态管理
+//所有命令统一拥有：执行中、执行完成状态，方便做命令队列、命令超时检测、UI 界面状态绑定。
+//支持参数绑定
+//LinkParameterName可以关联配方参数，实现脚本命令从配方读取参数值。
+//兼容 WPF MVVM
+//属性全部可以 get/set，可直接 XAML 绑定到界面，做命令配置页面。
+//支持序列化保存
+//可以把命令集合序列化保存到数据库 / Json，保存工艺配方。

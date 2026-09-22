@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="AppFrame.WpfClient.Views.RecipeEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AppFrame.WpfClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1080" Background="#404040">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360" />
+                 
+            <ColumnDefinition Width="25*" />
+            <ColumnDefinition Width="240" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2"   Grid.ColumnSpan="3" Margin="70,0,0,0">
+            <Label Content="当前配方名称:"   Width="160"   VerticalAlignment="Center" Margin="0,0,10,0" Foreground="White" FontSize="24"/>
+            <TextBlock  Width="120"  Height="30"   Text=" "  VerticalAlignment="Center" Margin="0,0,10,0" Background="Aquamarine"      Foreground="Black" FontSize="16" />
+            <Button Content="编辑配方" Width="100" Height="40" Margin="0,0,10,0" Click="Button_Click"/>
+            <Button Content="加载配方" Width="100" Height="40" Margin="0,0,10,0" Click="Button_Click"/>
+            <Button Content="保存配方" Width="100" Height="40" Margin="0,0,10,0" Click="Button_Click" />
+
+        </StackPanel>
+        
+
+        <StackPanel  Grid.Column="2" Grid.Row="1" >
+            <Label Content="MFC参数设置" FontSize="10" Margin="1" Foreground="White"/>
+
+            <DataGrid      ItemsSource="{Binding MfcSettingList}"
+                           Height="200"
+                           AutoGenerateColumns="False"
+                           CanUserAddRows="False"     
+                           CanUserDeleteRows="False"
+                           HeadersVisibility="Column"
+                           HorizontalGridLinesBrush="#888888"
+                           VerticalGridLinesBrush="#888888"
+                           GridLinesVisibility="All">
+                <DataGrid.Columns>
+
+                    <!-- No 序号 -->
+                    <DataGridTextColumn Header="No" Binding="{Binding No}" IsReadOnly="True" Width="45"/>
+                    <!-- Name气体名称 -->
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" Width="70"/>
+                    <!-- Setpoint设定值，可编辑 -->
+                    <DataGridTextColumn Header="Setpoint" Binding="{Binding Setpoint,UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                    <DataGridTextColumn Header="TempRamp" Binding="{Binding Setpoint,UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                    <!-- Unit单位只读 -->
+                    <DataGridTextColumn Header="Unit" Binding="{Binding Unit}" IsReadOnly="True" Width="45"/>
+                    <!-- High上限 -->
+                    <DataGridTextColumn Header="High" Binding="{Binding High,UpdateSourceTrigger=PropertyChanged}" Width="45"/>
+                    <!-- Low下限 -->
+                    <DataGridTextColumn Header="Low" Binding="{Binding Low,UpdateSourceTrigger=PropertyChanged}" Width="45"/>
+                    <!-- Check复选框列 -->
+                    <DataGridCheckBoxColumn Header="Check" Binding="{Binding IsCheck}" Width="45"/>
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+
+        <StackPanel  Grid.Column="2" Grid.Row="0" >
+            <Label Content="温度参数设置" FontSize="10" Margin="1" Foreground="White"/>
+
+            <DataGrid   Height="150"   
+                   AutoGenerateColumns="False"
+                   CanUserAddRows="False"     
+                   CanUserDeleteRows="False"
+                   HeadersVisibility="Column"
+                   HorizontalGridLinesBrush="#888888"
+                   VerticalGridLinesBrush="#888888"
+                   GridLinesVisibility="All">
+                <DataGrid.Columns>
+
+                    <!-- No 序号 -->
+                    <DataGridTextColumn Header="No" Binding="{Binding No}" IsReadOnly="True" Width="45"/>
+                    <!-- Name气体名称 -->
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" Width="70"/>
+                    <!-- Setpoint设定值，可编辑 -->
+                    <DataGridTextColumn Header="Setpoint" Width="60"/>
+                    <DataGridTextColumn Header="TempRamp" Width="60"/>
+                    <!-- Unit单位只读 -->
+                    <DataGridTextColumn Header="Unit" Binding="{Binding Unit}" IsReadOnly="True" Width="45"/>
+                    <!-- High上限 -->
+                    <DataGridTextColumn Header="High" Binding="{Binding High,UpdateSourceTrigger=PropertyChanged}" Width="45"/>
+                    <!-- Low下限 -->
+                    <DataGridTextColumn Header="Low" Binding="{Binding Low,UpdateSourceTrigger=PropertyChanged}" Width="45"/>
+                    <!-- Check复选框列 -->
+                    <DataGridCheckBoxColumn Header="Check" Binding="{Binding IsCheck}" Width="45"/>
+
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+            <Label Content="轴控制参数设置" FontSize="10" Margin="1" Foreground="White"/>
+            
+            <StackPanel Orientation="Horizontal" Background="White">
+                <Label Content="X轴速度:" Width="60" />
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+                <Label Content="Y轴速度:" Width="60"/>
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+                <Label Content="Z轴速度:" Width="60"/>
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Background="White">
+                <Label Content="X轴位置:" Width="60" />
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+                <Label Content="Y轴位置:" Width="60"/>
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+                <Label Content="Z轴位置:" Width="60"/>
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Background="White">
+                <Label Content="X轴:" Width="60" />
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+                <Label Content="Y轴:" Width="60"/>
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+                <Label Content="Z轴:" Width="60"/>
+                <TextBox Height="30" Width="80" Background="LightBlue"/>
+            </StackPanel>
+
+          
+
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" >
+            
+            
+               <Label Content="在此区域编辑气路图" FontSize="24" Foreground="red" HorizontalAlignment="Center" Margin="0,20,0,0"/>    
+
+
+
+
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>
+
+
+

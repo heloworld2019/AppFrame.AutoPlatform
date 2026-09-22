@@ -1,0 +1,3 @@
+原始硬件采集 IO、寄存器读写、硬件通信细节；实现 Domain 定义的接口；原始字节 / 寄存器数据读取；数据库 CRUD	❌不写业务规则，只做技术实现；只返回原始硬件数据
+
+数据流：硬件 PLC → Infra 采集驱动 → Application 应用服务编排 → Domain 做业务规则计算 → 返回 DTO → ViewModel 接收，赋值给 UI 绑定集合 → View 自动绑定刷新 UI。

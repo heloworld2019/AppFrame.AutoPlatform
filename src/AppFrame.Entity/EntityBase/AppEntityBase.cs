@@ -14,9 +14,9 @@ namespace AppFrame.Entity.EntityBase
     {
         [SugarColumn(IsIdentity = true, IsPrimaryKey = true)]
         public int Id { get; set; }
-        [SugarColumn(SerializeDateTimeFormat ="yyyy-mm-dd hh:mm:ss")]
+        [SugarColumn(SerializeDateTimeFormat ="yyyy-MM-dd HH:mm:ss")]
         public DateTime CreateTime { get; set; }
-        [SugarColumn(SerializeDateTimeFormat = "yyyy-mm-dd hh:mm:ss")]
+        [SugarColumn(SerializeDateTimeFormat = "yyyy-MM-dd HH:mm:ss")]
         public DateTime UpdateTime { get; set; }
     }
 }

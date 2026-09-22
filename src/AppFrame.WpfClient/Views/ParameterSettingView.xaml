@@ -37,14 +37,18 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
-                     </Grid.RowDefinitions>
+                        <RowDefinition/>
+                        
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
+                        <ColumnDefinition/>
+                      
                     </Grid.ColumnDefinitions>
                     <appui:AppFrameButton Type="Customize"
-                                          HorizontalAlignment="Right"
-                                          VerticalAlignment="Bottom"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
                                           Width="300"
                                           Height="60"
                                           Background="#404040"
@@ -53,6 +57,9 @@
                                           HoverBackground="#454545"
                                           CornerRadius="5"
                                           Margin="5"
+                                          Grid.Row="0"
+                                          Grid.Column="0"
+                                      
                                           Command="{Binding SwitchParameterPageCommand}"
                                           CommandParameter="1">
                         <appui:AppFrameButton.Content>
@@ -86,8 +93,8 @@
                         </appui:AppFrameButton.Content>
                     </appui:AppFrameButton>
                     <appui:AppFrameButton Type="Customize"
-                                          HorizontalAlignment="Left"
-                                          VerticalAlignment="Bottom"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
                                           Width="300"
                                           Height="60"
                                           Background="#404040"
@@ -95,6 +102,7 @@
                                           BorderThickness="0"
                                           HoverBackground="#454545"
                                           CornerRadius="5"
+                                          Grid.Row="0"
                                           Grid.Column="1"
                                           Margin="5"
                                           Command="{Binding SwitchParameterPageCommand}"
@@ -130,8 +138,8 @@
                         </appui:AppFrameButton.Content>
                     </appui:AppFrameButton>
                     <appui:AppFrameButton Type="Customize"
-                                          HorizontalAlignment="Right"
-                                          VerticalAlignment="Top"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
                                           Width="300"
                                           Height="60"
                                           Background="#404040"
@@ -139,7 +147,8 @@
                                           BorderThickness="0"
                                           HoverBackground="#454545"
                                           CornerRadius="5"
-                                          Grid.Row="1"
+                                          Grid.Row="0"
+                                          Grid.Column="2"
                                           Margin="5"
                                           Command="{Binding SwitchParameterPageCommand}"
                                           CommandParameter="3">
@@ -173,9 +182,250 @@
                             </Grid>
                         </appui:AppFrameButton.Content>
                     </appui:AppFrameButton>
+
+                 
                     <appui:AppFrameButton Type="Customize"
-                                          HorizontalAlignment="Left"
-                                          VerticalAlignment="Top"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Width="300"
+                      Height="60"
+                      Background="#404040"
+                      Foreground="White"
+                      BorderThickness="0"
+                      HoverBackground="#454545"
+                      CornerRadius="5"
+                      Grid.Row="1"
+                      Grid.Column="0"
+                      Margin="5"
+                      Command="{Binding SwitchParameterPageCommand}"
+                      CommandParameter="4">
+                        <appui:AppFrameButton.Content>
+                            <Grid Width="300"
+                                  Height="60">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="&#xe639;" 
+                       FontFamily="..\Asset\#iconfont"
+                       VerticalAlignment="Center"
+                       Margin="10 0"
+                       FontSize="30"/>
+                                <StackPanel VerticalAlignment="Center"
+                        Margin="5"
+                        Grid.Column="1">
+                                    <TextBlock Text="配方参数"
+                           FontSize="16"/>
+                                    <TextBlock Text="配置编辑配方数据"
+                           Margin="0 5 0 0"
+                           Foreground="#BBBBBB"/>
+                                </StackPanel>
+                                <TextBlock Text=">"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                       Margin="10 0"/>
+                            </Grid>
+                        </appui:AppFrameButton.Content>
+                    </appui:AppFrameButton>
+
+
+
+                    <appui:AppFrameButton Type="Customize"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Width="300"
+                      Height="60"
+                      Background="#404040"
+                      Foreground="White"
+                      BorderThickness="0"
+                      HoverBackground="#454545"
+                      CornerRadius="5"
+                      Grid.Row="1"
+                      Grid.Column="1"
+                      Margin="5"
+                      Command="{Binding SwitchParameterPageCommand}"
+                      CommandParameter="5">
+                        <appui:AppFrameButton.Content>
+                            <Grid Width="300"
+                                  Height="60">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="&#xe8f0;" 
+                       FontFamily="..\Asset\#iconfont"
+                       VerticalAlignment="Center"
+                       Margin="10 0"
+                       FontSize="30"/>
+                                <StackPanel VerticalAlignment="Center"
+                        Margin="5"
+                        Grid.Column="1">
+                                    <TextBlock Text="机器人参数"
+                           FontSize="16"/>
+                                    <TextBlock Text="配置机器人相关参数"
+                           Margin="0 5 0 0"
+                           Foreground="#BBBBBB"/>
+                                </StackPanel>
+                                <TextBlock Text=">"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                       Margin="10 0"/>
+                            </Grid>
+                        </appui:AppFrameButton.Content>
+                    </appui:AppFrameButton>
+
+
+                       
+                    <appui:AppFrameButton Type="Customize"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Width="300"
+                      Height="60"
+                      Background="#404040"
+                      Foreground="White"
+                      BorderThickness="0"
+                      HoverBackground="#454545"
+                      CornerRadius="5"
+                      Grid.Row="1"
+                      Grid.Column="2"
+                      Margin="5"
+                      Command="{Binding SwitchParameterPageCommand}"
+                      CommandParameter="6">
+                        <appui:AppFrameButton.Content>
+                            <Grid Width="300"
+                                  Height="60">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="&#xe619;" 
+                       FontFamily="..\Asset\#iconfont"
+                       VerticalAlignment="Center"
+                       Margin="10 0"
+                       FontSize="30"/>
+                                <StackPanel VerticalAlignment="Center"
+                        Margin="5"
+                        Grid.Column="1">
+                                    <TextBlock Text="MFC设备"
+                           FontSize="16"/>
+                                    <TextBlock Text="配置编辑MFC数据"
+                           Margin="0 5 0 0"
+                           Foreground="#BBBBBB"/>
+                                </StackPanel>
+                                <TextBlock Text=">"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                       Margin="10 0"/>
+                            </Grid>
+                        </appui:AppFrameButton.Content>
+                    </appui:AppFrameButton>
+
+                   <!--温控加热设备-->
+                    <appui:AppFrameButton Type="Customize"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Width="300"
+                      Height="60"
+                      Background="#404040"
+                      Foreground="White"
+                      BorderThickness="0"
+                      HoverBackground="#454545"
+                      CornerRadius="5"
+                      Grid.Row="2"
+                      Grid.Column="0"
+                      Margin="5"
+                      Command="{Binding SwitchParameterPageCommand}"
+                      CommandParameter="7">
+                        <appui:AppFrameButton.Content>
+                            <Grid Width="300"
+                                  Height="60">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="&#xe619;" 
+                       FontFamily="..\Asset\#iconfont"
+                       VerticalAlignment="Center"
+                       Margin="10 0"
+                       FontSize="30"/>
+                                <StackPanel VerticalAlignment="Center"
+                        Margin="5"
+                        Grid.Column="1">
+                                    <TextBlock Text="温控参数"
+                           FontSize="16"/>
+                                    <TextBlock Text="配置温控加热参数数据"
+                           Margin="0 5 0 0"
+                           Foreground="#BBBBBB"/>
+                                </StackPanel>
+                                <TextBlock Text=">"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                       Margin="10 0"/>
+                            </Grid>
+                        </appui:AppFrameButton.Content>
+                    </appui:AppFrameButton>
+
+
+                    <!--总览信息-->
+                    <appui:AppFrameButton Type="Customize"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Width="300"
+                      Height="60"
+                      Background="#404040"
+                      Foreground="White"
+                      BorderThickness="0"
+                      HoverBackground="#454545"
+                      CornerRadius="5"
+                      Grid.Row="2"
+                      Grid.Column="1"
+                      Margin="5"
+                      Command="{Binding SwitchParameterPageCommand}"
+                      CommandParameter="8">
+                        <appui:AppFrameButton.Content>
+                            <Grid Width="300"
+                                  Height="60">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="&#xe621;" 
+                       FontFamily="..\Asset\#iconfont"
+                       VerticalAlignment="Center"
+                       Margin="10 0"
+                       FontSize="30"/>
+                                <StackPanel VerticalAlignment="Center"
+                        Margin="5"
+                        Grid.Column="1">
+                                    <TextBlock Text="总览"
+                           FontSize="16"/>
+                                    <TextBlock Text="项目总览信息及帮助"
+                           Margin="0 5 0 0"
+                           Foreground="#BBBBBB"/>
+                                </StackPanel>
+                                <TextBlock Text=">"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       FontSize="25"
+                       Margin="10 0"/>
+                            </Grid>
+                        </appui:AppFrameButton.Content>
+                    </appui:AppFrameButton>
+
+
+                   <!--其他设备-->
+                    <appui:AppFrameButton Type="Customize"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
                                           Width="300"
                                           Height="60"
                                           Background="#404040"
@@ -183,11 +433,11 @@
                                           BorderThickness="0"
                                           HoverBackground="#454545"
                                           CornerRadius="5"
-                                          Grid.Row="1"
-                                          Grid.Column="1"
+                                          Grid.Row="2"
+                                          Grid.Column="2"
                                           Margin="5"
                                           Command="{Binding SwitchParameterPageCommand}"
-                                          CommandParameter="4">
+                                          CommandParameter="9">
                         <appui:AppFrameButton.Content>
                             <Grid Width="300"
                                   Height="60">
@@ -206,7 +456,7 @@
                                             Grid.Column="1">
                                     <TextBlock Text="其他参数"
                                                FontSize="16"/>
-                                    <TextBlock Text="配置其他设备参数"
+                                    <TextBlock Text="配置设备参数"
                                                Margin="0 5 0 0"
                                                Foreground="#BBBBBB"/>
                                 </StackPanel>
@@ -219,6 +469,9 @@
                         </appui:AppFrameButton.Content>
                     </appui:AppFrameButton>
                 </Grid>
+                
+                
+              <!--展开的控制内容-->     
             </appui:AppFrameTabItem>
             <appui:AppFrameTabItem Header="气缸参数">
                 <Grid>
@@ -229,16 +482,32 @@
                     <Border BorderThickness="0 0 0 1"
                             BorderBrush="#BBBBBB"
                             Grid.Column="1"/>
-                    <DockPanel LastChildFill="False">
-                        <StackPanel Orientation="Horizontal"
+                    <DockPanel LastChildFill="False" >
+                        <StackPanel Orientation="Horizontal" 
                                 Margin="5">
                             <TextBlock Text="选择："
                                    VerticalAlignment="Center"/>
-                            <ComboBox Width="200"
-                                  IsReadOnly="True"/>
-                            <TextBlock Text="当前：传送阻挡气缸"
-                                   VerticalAlignment="Center"
-                                   Margin="20 0"/>
+                            <ComboBox x:Name="SolenoidParameterComboBox"  Width="200" Height="30"
+                                  IsReadOnly="True">
+                               
+                                <ComboBoxItem Name="气缸1" Content="气缸1" Height="40"/>
+                                <ComboBoxItem Name="气缸2" Content="气缸2" Height="40"/>
+                                <ComboBoxItem Name="气缸3" Content="气缸2" Height="40"/>
+
+
+
+                            </ComboBox>
+
+
+
+
+
+                            <TextBlock Text= "{ Binding Path=SelectedItem.Content  ,  ElementName=SolenoidParameterComboBox}"
+                               
+                                   Width="100"
+                                   Height="30"
+                                   Background="#1E9FFF"
+                                   Margin="20"/>
                             <appui:AppFrameButton Content="到动点"
                                                   Type="Normal"
                                                   Height="30"/>
@@ -267,6 +536,9 @@
                                               Margin="5"
                                               DockPanel.Dock="Right"/>
                     </DockPanel>
+                    
+                    
+                    
                     <ItemsControl Grid.Row="1"
                                   ItemsSource="{Binding SolenoidParameters}">
                         <ItemsControl.ItemsPanel>
@@ -335,6 +607,10 @@
                     </ItemsControl>
                 </Grid>
             </appui:AppFrameTabItem>
+            
+            
+            
+            
             <appui:AppFrameTabItem Header="运动参数">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -465,7 +741,7 @@
                         </appui:AppFrameExpander>
                     </StackPanel>
                     <ScrollViewer Grid.Row="2"
-                                  >
+                                 >
                         <ItemsControl ItemsSource="{Binding AxisPositionParameters}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -540,7 +816,8 @@
 
 
             </appui:AppFrameTabItem>
-            <appui:AppFrameTabItem Header="Io监视"/>
+            <appui:AppFrameTabItem Header="MFC参数"/>
+            <appui:AppFrameTabItem Header="温控设备"/>
             <appui:AppFrameTabItem Header="总览信息"/>
 
 

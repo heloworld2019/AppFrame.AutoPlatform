@@ -16,7 +16,7 @@ namespace AppFrame.Common.Extensions.ValueType
         /// <returns></returns>
         public static bool GetBitValue(this uint value, ushort index)
         {
-            if (index > 31) throw new ArgumentOutOfRangeException("index");
+            if (index > 31) throw new ArgumentOutOfRangeException(nameof(index));
             var val = 1 << index;
             return (value & val) == val;
         }
@@ -28,7 +28,7 @@ namespace AppFrame.Common.Extensions.ValueType
         /// <returns></returns>
         public static bool GetBitValue(this int value, ushort index)
         {
-            if (index > 31) throw new ArgumentOutOfRangeException("index");
+            if (index > 31) throw new ArgumentOutOfRangeException(nameof(index));
             var val = 1 << index;
             return (value & val) == val;
         }
@@ -40,8 +40,8 @@ namespace AppFrame.Common.Extensions.ValueType
         /// <returns></returns>
         public static uint SetBitValue(this uint value, ushort index, bool bitValue)
         {
-            if (index > 31) throw new ArgumentOutOfRangeException("index");
-            var val = 1 << index;
+            if (index > 31) throw new ArgumentOutOfRangeException(nameof(index));
+            var val = 1u << index;
             return (uint)(bitValue ? (value | val) : (value & ~val));
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace AppFrame.Common.Extensions.ValueType
         /// <returns></returns>
         public static int SetBitValue(this int value, ushort index, bool bitValue)
         {
-            if (index > 31) throw new ArgumentOutOfRangeException("index");
+            if (index > 31) throw new ArgumentOutOfRangeException(nameof(index));
             var val = 1 << index;
             return (bitValue ? (value | val) : (value & ~val));
         }
